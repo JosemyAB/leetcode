@@ -8,16 +8,18 @@ public class JosemyDate {
 
         int[] cumulativeDays = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
+        // Validate input
         if (month < 1 || month > 12) {
-            throw new IllegalArgumentException("Bad month");
+            throw new IllegalArgumentException("Month must be 1-12");
         }
 
         int result = cumulativeDays[month - 1] + day;
 
-        //Handle leap year
+        // Add leap day if applicable (after February in a leap year)
         if (month > 2 && leapYear(year)) {
-            return result + 1;
+            result += 1;
         }
+
         return result;
     }
 
