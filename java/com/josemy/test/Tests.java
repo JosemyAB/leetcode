@@ -1,9 +1,8 @@
 import api.GitLabClient;
 import api.Namespace;
 import api.Project;
+import dates.JosemyDate;
 
-import java.awt.*;
-import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +12,28 @@ public class Tests {
     public static void main(String[] args) {
 
 //        testArrays();
-        testSort();
+//        testSort();
+        testDayOfYear();
+        ;
+    }
+
+    private static void testDayOfYear() {
+        // === Question 6: Day of year demo ===
+        System.out.println("\n=== Question 6: Day of Year Demo ===\n");
+
+        System.out.println("March 1, 2024 (leap year): " + JosemyDate.dayOfYearArray(2024, 3, 1));  // Should be 61
+        System.out.println("March 1, 2023 (not leap):  " + JosemyDate.dayOfYearArray(2023, 3, 1));  // Should be 60
+        System.out.println("Dec 31, 2024 (leap year):  " + JosemyDate.dayOfYearArray(2024, 12, 31)); // Should be 366
+
+        System.out.println("March 1, 2024 (leap year): " + JosemyDate.dayOfYearCumulative(2024, 3, 1));  // Should be 61
+        System.out.println("March 1, 2023 (not leap):  " + JosemyDate.dayOfYearCumulative(2023, 3, 1));  // Should be 60
+        System.out.println("Dec 31, 2024 (leap year):  " + JosemyDate.dayOfYearCumulative(2024, 12, 31)); // Should be 366
+
+        System.out.println("March 1, 2024 (leap year): " + JosemyDate.dayOfYearJavaSupport(2024, 3, 1));  // Should be 61
+        System.out.println("March 1, 2023 (not leap):  " + JosemyDate.dayOfYearJavaSupport(2023, 3, 1));  // Should be 60
+        System.out.println("Dec 31, 2024 (leap year):  " + JosemyDate.dayOfYearJavaSupport(2024, 12, 31)); // Should be 366
+
+
     }
 
     private static void testSort() {

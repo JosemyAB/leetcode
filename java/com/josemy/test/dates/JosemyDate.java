@@ -9,7 +9,7 @@ public class JosemyDate {
         int[] cumulativeDays = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
 
         if (month < 1 || month > 12) {
-            throw  new IllegalArgumentException("Bad month");
+            throw new IllegalArgumentException("Bad month");
         }
 
         int result = cumulativeDays[month - 1] + day;
@@ -26,7 +26,7 @@ public class JosemyDate {
 
         int accumulatedDays = 0;
         for (int i = 0; i < month; i++) {
-            accumulatedDays+=daysPerMonth[i];
+            accumulatedDays += daysPerMonth[i];
         }
 
         if (month > 2 && leapYear(year)) {
